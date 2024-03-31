@@ -3,8 +3,8 @@
 ## Problembeschreibung
 
 
-[Link zum YouTube-Video]([Link zum YouTube-Video](https://www.youtube.com/watch?v=VIDEO_ID)
-)
+[Link zum YouTube-Video](https://www.youtube.com/watch?v=VIDEO_ID)
+
 
 
 
