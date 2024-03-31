@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -35,7 +36,34 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 16px; /* Angepasst für eine bessere Lesbarkeit */
+  color: #fff;
+  background-color: rgb(28, 28, 30);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 0 0 1px transparent; /* Leicht angepasst für Konsistenz */
+  border-radius: 8px; /* Etwas größer für ein modernes Erscheinungsbild */
+  border: none;
+  outline: none;
+  padding: 12px; /* Größerer Innenabstand für ein zugänglicheres Design */
+  max-width: 280px; /* Größerer Maximalwert für die Breite */
+  width: 100%; /* Passt sich der Containerbreite an */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in die Breite inkludiert sind */
+  transition: box-shadow 0.3s ease-in-out; /* Glattere Übergänge */
+}
+
+.input:hover {
+  box-shadow: 0 0 0 1px rgba(135, 207, 235, 0.6); /* Etwas deutlicher beim Hover */
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px skyblue; /* Deutlichere Fokus-Indikation */
+}
+
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -52,6 +80,97 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+} */
+
+.button-container {
+  display: flex;
+  gap: 8px; /* Fügt Abstand zwischen den Buttons hinzu */
+}
+
+button {
+  position: relative;
+  margin: 0 5px; /* Etwas Abstand rund um die Buttons */
+  display: inline-flex;
+  padding: 0.6em 0.9em; /* Reduziertes Padding für eine kleinere Button-Größe */
+  outline: none;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px; /* Etwas kleinere Schriftgröße */
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+button:hover {
+  animation: sh0 0.5s ease-in-out both;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+button:hover::before,
+button:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+button:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+button:hover::after {
+  transform: translate(50%, 0) scale(1.1);
 }
 
 @media (prefers-color-scheme: light) {

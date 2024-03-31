@@ -70,6 +70,7 @@ const App: React.FC = () => {
     <div className="container">
       <h1>Passwort Checker</h1>
       <input
+        className="input"
         type="string"
         value={password}
         onChange={handlePasswordChange}
@@ -86,11 +87,15 @@ const App: React.FC = () => {
           </ul>
         </div>
       )}
-      <button onClick={generatePassword}>Passwort umwandeln</button>
-      <button onClick={toggleTips}>
-        {showTips ? "Tipps verstecken" : "Passwort Tipps anzeigen"},
-      </button>
-      <button onClick={handleCheckLeaks}>Passwort auf Leaks überprüfen</button>
+      <div className="button-container">
+        <button onClick={generatePassword}>Passwort umwandeln</button>
+        <button onClick={toggleTips}>
+          {showTips ? "Tipps verstecken" : "Passwort Tipps anzeigen"},
+        </button>
+        <button onClick={handleCheckLeaks}>
+          Passwort auf Leaks überprüfen
+        </button>
+      </div>
       {leaked ? (
         <p style={{ color: "red" }}>Das eingegebene Passwort wurde geleakt!</p>
       ) : (
