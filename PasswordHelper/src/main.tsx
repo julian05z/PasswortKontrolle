@@ -90,7 +90,7 @@ const App: React.FC = () => {
       <div className="button-container">
         <button onClick={generatePassword}>Passwort umwandeln</button>
         <button onClick={toggleTips}>
-          {showTips ? "Tipps verstecken" : "Passwort Tipps anzeigen"},
+          {showTips ? "Tipps verstecken" : "Passwort Tipps anzeigen"}
         </button>
         <button onClick={handleCheckLeaks}>
           Passwort auf Leaks überprüfen
