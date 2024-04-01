@@ -31,8 +31,6 @@ const App: React.FC = () => {
   };
 
   const checkPasswordStrength = (password: string) => {
-    // Funktion zur Überprüfung der Passwortstärke hier implementieren
-    // Dies ist ein einfaches Beispiel, das nur die Länge überprüft
     if (password.length >= 8) {
       setPasswordStrength("sicher");
     } else {
@@ -41,8 +39,6 @@ const App: React.FC = () => {
   };
 
   const generatePassword = () => {
-    // Funktion zur automatischen Passwortgenerierung hier implementieren
-    // Dies ist ein einfaches Beispiel, das ein zufälliges Passwort generiert
     const transformedPassword = transformPassword(password);
     setPassword(transformedPassword);
     setPasswordStrength("sicher");
@@ -110,7 +106,6 @@ const App: React.FC = () => {
 
 export default App;
 
-// Beispielaufruf
 const generatedPassword = generateRandomString(12);
 console.log(generatedPassword);
 
